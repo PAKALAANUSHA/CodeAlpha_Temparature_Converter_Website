@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temparature converter</title>
+        <style>
+            body{
+                background-color:cyan;
+            }
+           .heading{
+               text-align: center;
+               color:blueviolet;
+           }
+           .div1{
+            display: flex;
+            justify-content: space-evenly;
+           }
+           .box1{
+            height:200px;
+            width:40%;
+            background-color:pink;
+            text-align:center;
+            border:2px solid plum;
+            border-radius: 50px;
+            margin-top:50px;
+
+           }
+           input{
+            height:23px;
+            width:150px;
+            border-radius: 8px;
+            border:2px solid plum;
+           }
+           .bt{
+            height:30px;
+            width:100px;
+            border-radius: 10px;
+            margin-left:35px;
+            border:2px solid plum;
+           }
+        </style>
+    </head>
+    <body>
+        <h1 class="heading">Temparature Converter</h1>
+        <div class="div1">
+        <div class="box1">
+            <h2>Celsius to Kelvin</h2>
+        <form>
+           <label>celsius</label>
+           <input type="number" class="cel" onkeyup="convertctok()">
+        </form>
+        <p id="kel"></p>
+        </div>
+        <div class="box1">
+            <h2>Kelvin to Celsius </h2>
+        <form>
+           <label>Kelvin</label>
+           <input type="number" class="kel" onkeyup="convertktoc()">
+        </form>
+        <p id="cel"></p>
+        </div>
+        </div>
+        <div class="div1">
+            <div class="box1">
+              <h2>Celsius to Fahrenheit</h2>
+              <form>
+              <label>Celsius</label>
+              <input type="number" class="c" onkeyup="convertctof()">
+              </form>
+              <p id="far"></p>
+            </div>
+                <div class="box1">
+              <h2>Fahrenheit to Celsius</h2>
+              <form>
+              <label>Fahrenheit</label>
+              <input type="number" class="f" onkeyup="convertftoc()">
+              </form>
+              <p id="c"></p>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="box1">
+                <h2>Kelvin to Fahrenheit</h2>
+                <form>
+                    <label>Kelvin</label>
+                    <input type="number" class="k" onkeyup="convertktof()">
+                </form>
+                <p id="f"></p>
+            </div>
+              <div class="box1">
+                <h2>Fahrenheit to Kelvin</h2>
+                <form>
+                    <label>Fahrenheit</label>
+                    <input type="number" class="faren" onkeyup="convertftok()">
+                </form>
+                <p id="kelvin"></p>
+            </div>
+        </div>
+        <script>
+            function convertctok(){
+            var cel=document.querySelector(".cel").value
+            document.getElementById("kel").innerHTML=Number(cel)+273.15
+
+            }
+            function convertktoc(){
+            var kel=document.querySelector(".kel").value
+            document.getElementById("cel").innerHTML=Number(kel)-273.15
+            }
+            function convertctof(){
+                var cel=document.querySelector(".c").value
+                var n=Number(cel)
+                var f=(n*9)/5
+           document.getElementById("far").innerHTML=f+32
+            }
+            function convertftoc(){
+            var far=document.querySelector(".f").value
+            var n=Number(far)-32
+                var c=(n*5)/9
+           document.getElementById("c").innerHTML=c
+            }
+            function convertktof(){
+            var kel=document.querySelector(".k").value
+            var c=Number(kel)-273.15
+             var f=(c*9)/5
+           document.getElementById("f").innerHTML=f+32
+
+            }
+            function convertftok(){
+            var far=document.querySelector(".faren").value
+            var n=Number(far)-32
+                var c=(n*5)/9
+                 document.getElementById("kelvin").innerHTML=c+273.15
+}
+           
+         </script>
+    </body>
+</html>
